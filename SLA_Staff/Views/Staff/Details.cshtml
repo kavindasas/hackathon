@@ -1,0 +1,226 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+    var p = ViewData["staffDetails"] as SLA_Staff.Models.staffPerson;
+    ViewBag.Title = @p.Name + " Detailed View";
+
+}
+
+
+<div class="row">
+    <div class="col-sm-12" style="background-color:black; text-align:left;min-height:60px;">
+        <h3 style="color:#36b3e2;padding-left:60px;position:absolute">
+            @p.Name
+        </h3>
+
+
+    </div>
+
+
+
+
+    <!-- edit form column -->
+    <div class="col-md-5 personal-info" style="padding-left:4%">
+        <div class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i><strong>Please Change Necessary Fields Only</strong>.  
+        </div>
+        <h3>Personal info</h3>
+
+        <form class="form-horizontal" role="form" method="post" action="~/Staff/Update">
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Staff No</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="txtid" value="@p.Id">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Name</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="name" value="@p.Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Prefered Name</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="pname" value="@p.Pname1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Cost Centre</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="cc" value="@p.CostC">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Designation</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="des" value="@p.Designation">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Grade</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="grade" value="@p.Grade">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Company Joined Date</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="Jdate" value="@p.CompanyJoined">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">IT_Dept Joined Date</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="ITdate" value="@p.DeptJoined">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">No Pay</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="nopay" value="@p.NoPay1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Availability</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="ava" value="@p.Availability">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                    <span></span>
+                    <input type="reset" class="btn btn-default" value="Cancel">
+                </div>
+            </div>
+        </form>
+    </div>
+    @*end of edit form*@
+
+
+    @*Promotions*@
+    <div class="col-md-6" style="background-color:#fff;z-index:1;margin-top:1%">
+        <div class="col-sm-12" style="padding:10px;">
+            <h4><b>Promotions</b></h4>
+            
+           
+            @if (ViewData["staffPromotions"] != null)
+            {
+                <table class="myTable">
+                    <tr>
+                        <th>
+                            Staff#
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Promotion From
+                        </th>
+                        <th>
+                            Promotion To
+                        </th>
+                    </tr>
+
+                    @foreach (var promos in ViewData["staffPromotions"] as List<SLA_Staff.Models.staffPromo>)
+                    {
+                            <tr>
+                                <td>
+                                    @promos.Id
+                                </td>
+                                <td>
+                                    @promos.Date
+                                </td>
+                                <td>
+                                    @promos.PromoFrom
+                                </td>
+                                <td>
+                                    @promos.PromoTo
+                                </td>
+                            </tr>
+                        }
+
+                </table>
+            }
+            else
+            {
+                <p>There Are No Promotions Yet</p>
+            }
+
+           
+        </div>
+        
+    </div>
+    @*End Of Promotions*@
+
+
+
+    @*Trainings*@
+    <div class="col-md-6" style="background-color:#fff;z-index:1;margin-top:3%">
+        <div class="col-sm-12" style="padding:10px;">
+            <h4><b>Trainings</b></h4>
+            @if (ViewData["staffTrainings"] != null)
+            {
+                <table class="myTable">
+                    <tr>
+                        <th>
+                            Staff#
+                        </th>
+                        <th>
+                           Start Date
+                        </th>
+                        <th>
+                           End Date
+                        </th>
+                        <th>
+                           Description
+                        </th>
+                    </tr>
+
+                    @foreach (var promos in ViewData["staffTrainings"] as List<SLA_Staff.Models.staffTraining>)
+                    {
+                        <tr>
+                            <td>
+                                @promos.Id
+                            </td>
+                            <td>
+                                @promos.TrainingDate
+                            </td>
+                            <td>
+                                @promos.TrainigEnd
+                            </td>
+                            <td>
+                                @promos.Desc
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p> There Are No Trainings Yet</p>
+            }
+        </div>
+
+    </div>
+    @*End Of Trainings*@
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+

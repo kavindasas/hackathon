@@ -1,0 +1,133 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = " Add Promotions";
+}
+
+<div class="row">
+    <div class="col-sm-12" style="background-color:black; text-align:left;min-height:60px;">
+        <h3 style="color:#36b3e2;padding-left:60px;position:absolute">
+            Add New Promotions and Trainings
+        </h3>
+
+
+    </div>
+
+
+
+
+    <!-- Promotions -->
+
+    <div class="col-sm-6 personal-info" style="padding-left:5%">
+        <h3>Promotions</h3>
+
+        <form class="form-horizontal" role="form" method="post" action="AddPromo">
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Staff No</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="txtid" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Name</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="name" value="" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Prefered Name</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="pname" value="" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Promotion From</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="promoFrom" value="" disabled>
+                </div>
+            </div>
+            <hr style="width:73%;margin-left:0px"/>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Date</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="Promodate" value="">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Promotion To</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="promoTo" value="">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary" value="Add New">
+                    <span></span>
+                    <input type="reset" class="btn btn-default" value="Cancel">
+                </div>
+            </div>
+        </form>
+    </div>
+    @*end of promotions*@
+
+    <!-- Trainings -->
+
+    <div class="col-sm-6 personal-info" style="padding-left:5%">
+        <h3>Trainings</h3>
+
+        <form class="form-horizontal" role="form" method="post" action="AddTraining">
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Staff No</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="txtid" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Name</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="name" value="" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Prefered Name</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="pname" value="" disabled>
+                </div>
+            </div>
+            <hr style="width:73%;margin-left:0px" />
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Start Date</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="trainStart" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-3 control-label">End Date</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="trainEnd" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Description</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="desc" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary" value="Add New">
+                    <span></span>
+                    <input type="reset" class="btn btn-default" value="Cancel">
+                </div>
+            </div>
+        </form>
+    </div>
+    @*end of trainings*@
+
+</div>
+

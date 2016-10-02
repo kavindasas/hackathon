@@ -12,7 +12,7 @@ namespace SLA_Staff.Controllers
 {
     public class StaffController : Controller
     {
-       SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LA58UBF;Initial Catalog=StaffDB;Integrated Security=SSPI");
+       SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BQ663OC;Initial Catalog=StaffDB;Integrated Security=SSPI");
        
         SqlDataReader rdr = null;
         SqlDataReader rdrPromotions = null;
@@ -158,6 +158,7 @@ namespace SLA_Staff.Controllers
         [HttpPost]
         public ActionResult Update()
         {
+            string i = "1";
             try
             {
                 conn.Open();

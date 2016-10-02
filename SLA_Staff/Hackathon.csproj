@@ -198,10 +198,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\productsController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductEdit.cs" />
     <Compile Include="Models\staffPerson.cs" />
     <Compile Include="Models\staffPromo.cs" />
     <Compile Include="Models\staffTraining.cs" />
@@ -261,6 +264,10 @@
     <Content Include="Views\Staff\AddStaff.cshtml" />
     <Content Include="Views\Staff\AddPromotions.cshtml" />
     <Content Include="Views\Home\careersSample.cshtml" />
+    <Content Include="Views\products\Index.cshtml" />
+    <Content Include="Views\products\EditProduct.cshtml" />
+    <Content Include="Views\Reports\AddReport.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
